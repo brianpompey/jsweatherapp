@@ -44,7 +44,7 @@ function displayData (response) {
         weather.innerText = `Weather: ${response.weather[0].main}`;
 
         const tempRange = document.querySelector(".temp-range");
-        tempRange.innerText = `Temp Range: ${Math.round(response.main.temp_min)}°C / ${Math.round(response.main.temp_max)}°C`;
+        tempRange.innerText = `Temp Range: ${Math.round(response.main.temp_min)}°F / ${Math.round(response.main.temp_max)}°F`;
 
         const weatherIcon = document.querySelector(".weather-icon");
         const iconURL = "http://openweathermap.org/img/w/";
