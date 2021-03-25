@@ -1,5 +1,5 @@
 const api = {
-    key: "28fd15358cdecbc1a1dfef367e71acef",
+    key: "632bf8a7d7b7a70ac9c1be9c019cb830",
     base: "https://api.openweathermap.org/data/2.5/"
 }
 
@@ -16,7 +16,7 @@ function getInput (event) {
 }
 
 function getData () {
-    fetch(`${api.base}weather?q=${search.value}&units=metric&appid=${api.key}`)
+    fetch(`${api.base}weather?q=${search.value}&units=imperail&appid=${api.key}`)
         .then(response => {
             return response.json();
         }).then(displayData);
@@ -38,7 +38,7 @@ function displayData (response) {
         date.innerText = dateFunction(today);
 
         const temp = document.querySelector(".temp");
-        temp.innerHTML = `Temp: ${Math.round(response.main.temp)} <span>°C</span>`;
+        temp.innerHTML = `Temp: ${Math.round(response.main.temp)}  <span>°F</span>`;
 
         const weather = document.querySelector(".weather");
         weather.innerText = `Weather: ${response.weather[0].main}`;
@@ -65,3 +65,4 @@ function dateFunction (d) {
 
     return `${day}, ${date} ${month} ${year}`;
 }
+
